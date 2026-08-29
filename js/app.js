@@ -63,8 +63,8 @@ function displayRecipes(recipeList) {
 
         card.innerHTML = `
             <div class="recipe-image">
-                🍳
-            </div>
+    ${recipe.image || "🍴"}
+</div>
 
             <div class="recipe-info">
 

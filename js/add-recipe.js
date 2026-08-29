@@ -12,9 +12,29 @@ function parseAmount(value) {
         return 0;
     }
 
-    // Normal decimal number
+    // Normal number: 2, 1.5, etc.
     if (!isNaN(value)) {
         return Number(value);
+    }
+
+    // Handle fractions like "1/2", "3/4", etc.
+    if (value.includes("/")) {
+
+        const parts = value.split("/");
+
+        if (parts.length === 2) {
+
+            const numerator = Number(parts[0].trim());
+            const denominator = Number(parts[1].trim());
+
+            if (
+                !isNaN(numerator) &&
+                !isNaN(denominator) &&
+                denominator !== 0
+            ) {
+                return numerator / denominator;
+            }
+        }
     }
 
     // Unicode fractions
@@ -35,6 +55,24 @@ function parseAmount(value) {
         "⅝": 0.625,
         "⅞": 0.875
     };
+
+    // Handle mixed Unicode fractions like "1½"
+    for (const fraction in unicodeFractions) {
+
+        if (value.includes(fraction)) {
+
+            const whole =
+                value.replace(fraction, "").trim();
+
+            return (
+                (Number(whole) || 0) +
+                unicodeFractions[fraction]
+            );
+        }
+    }
+
+    return 0;
+}
 
     // Handle something like "1½"
     for (const fraction in unicodeFractions) {

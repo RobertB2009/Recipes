@@ -221,6 +221,7 @@ function displayRecipe(recipe) {
 
 
     setupServingControls();
+    setupCookingMode();
 
 }
 

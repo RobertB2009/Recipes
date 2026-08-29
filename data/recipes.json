@@ -4,6 +4,7 @@
         "name": "FlourTortillasV1",
         "description": "decent and easy Tortillas",
         "category": "Bread",
+        "image": "🌯",
         "prepTime": 5,
         "cookTime": 10,
         "servings": 8,

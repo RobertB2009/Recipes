@@ -15,26 +15,63 @@ addIngredientButton.addEventListener("click", () => {
 
     row.className = "ingredient-row";
 
-    row.innerHTML = `
-        <input
-            type="number"
-            class="ingredient-amount"
-            placeholder="1"
-            step="any"
-        >
+row.innerHTML = `
+    <input
+        type="number"
+        class="ingredient-amount"
+        placeholder="1"
+        step="any"
+    >
 
-        <input
-            type="text"
-            class="ingredient-unit"
-            placeholder="cup"
-        >
+    <select class="ingredient-unit">
+        <option value="">Unit</option>
 
-        <input
-            type="text"
-            class="ingredient-name"
-            placeholder="ingredient"
-        >
-    `;
+        <optgroup label="Volume">
+            <option value="tsp">tsp</option>
+            <option value="tbsp">tbsp</option>
+            <option value="cup">cup</option>
+            <option value="fl oz">fl oz</option>
+            <option value="pint">pint</option>
+            <option value="quart">quart</option>
+            <option value="gallon">gallon</option>
+            <option value="mL">mL</option>
+            <option value="L">L</option>
+        </optgroup>
+
+        <optgroup label="Weight">
+            <option value="oz">oz</option>
+            <option value="lb">lb</option>
+            <option value="g">g</option>
+            <option value="kg">kg</option>
+        </optgroup>
+
+        <optgroup label="Other">
+            <option value="whole">whole</option>
+            <option value="pinch">pinch</option>
+            <option value="dash">dash</option>
+            <option value="package">package</option>
+            <option value="can">can</option>
+            <option value="jar">jar</option>
+            <option value="bunch">bunch</option>
+            <option value="slice">slice</option>
+        </optgroup>
+
+        <option value="custom">Custom...</option>
+    </select>
+
+    <input
+        type="text"
+        class="ingredient-custom-unit"
+        placeholder="Custom unit"
+        hidden
+    >
+
+    <input
+        type="text"
+        class="ingredient-name"
+        placeholder="ingredient"
+    >
+`;
 
     ingredientsContainer.appendChild(row);
 });

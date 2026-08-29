@@ -1,0 +1,51 @@
+[
+    {
+        "id": "flv1Tortillas",
+        "name": "FlourTortillasV1",
+        "description": "decent and easy Tortillas",
+        "category": "Bread",
+        "prepTime": 5,
+        "cookTime": 10,
+        "servings": 8,
+        "ingredients": [
+            {
+                "amount": 2,
+                "unit": "cup",
+                "name": "all-purpose flour"
+            },
+            {
+                "amount": 1/2,
+                "unit": "tsp",
+                "name": "salt"
+            },
+            {
+                "amount": 3/4,
+                "unit": "cup",
+                "name": "Water"
+            },
+            {
+                "amount": 3,
+                "unit": "tbsp",
+                "name": "Vegtable Oil"
+            }
+        ],
+        "instructions": [
+            "Mix the flour, water, oil, and salt.",
+            "transfer dough to floured surface.",
+            "knead until smooth.",
+            "split into tortilla servings(originally 8).",
+            "roll each paper thin.",
+            "cook 1-2 minutes per side or until golden over medium heat."
+        ],
+        "tags": [
+            "Tortillas",
+            "bread",
+            "dessert",
+            "dinner",
+            "lunch",
+            "breakfast"
+        ],
+        "favorite": false,
+        "notes": "little hard to roll, easy to burn, dont stack raw dough!"
+    }
+]

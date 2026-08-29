@@ -4,6 +4,56 @@ const instructionsContainer = document.getElementById("instructions");
 const addIngredientButton = document.getElementById("addIngredient");
 const addInstructionButton = document.getElementById("addInstruction");
 
+function parseAmount(value) {
+
+    value = value.trim();
+
+    if (!value) {
+        return 0;
+    }
+
+    // Normal decimal number
+    if (!isNaN(value)) {
+        return Number(value);
+    }
+
+    // Unicode fractions
+    const unicodeFractions = {
+        "½": 0.5,
+        "⅓": 1 / 3,
+        "⅔": 2 / 3,
+        "¼": 0.25,
+        "¾": 0.75,
+        "⅕": 0.2,
+        "⅖": 0.4,
+        "⅗": 0.6,
+        "⅘": 0.8,
+        "⅙": 1 / 6,
+        "⅚": 5 / 6,
+        "⅛": 0.125,
+        "⅜": 0.375,
+        "⅝": 0.625,
+        "⅞": 0.875
+    };
+
+    // Handle something like "1½"
+    for (const fraction in unicodeFractions) {
+
+        if (value.includes(fraction)) {
+
+            const whole =
+                value.replace(fraction, "").trim();
+
+            return (
+                (Number(whole) || 0) +
+                unicodeFractions[fraction]
+            );
+        }
+    }
+
+    return 0;
+}
+
 
 // =========================
 // UNIT SELECTOR
@@ -100,12 +150,11 @@ addIngredientButton.addEventListener("click", () => {
 
     row.innerHTML = `
         <input
-            type="number"
-            class="ingredient-amount"
-            placeholder="1"
-            step="any"
-        >
-
+    type="text"
+    class="ingredient-amount"
+    placeholder="1 or ½"
+    inputmode="text"
+>
         ${createUnitHTML()}
 
         <input
@@ -222,7 +271,7 @@ recipeForm.addEventListener("submit", (event) => {
 
 
         ingredients.push({
-            amount: Number(amount) || 0,
+            amount: parseAmount(amount),
             unit: unit,
             name: ingredientName
         });

@@ -185,8 +185,32 @@
                 </div>
 
                 <button type="submit" class="primary-button">
-                    Save Recipe
-                </button>
+    Generate Recipe
+</button>
+
+<div id="jsonResult" class="json-result" hidden>
+    <div class="json-header">
+        <h2>Generated Recipe</h2>
+
+        <button
+            type="button"
+            id="copyJson"
+            class="secondary-button"
+        >
+            📋 Copy JSON
+        </button>
+    </div>
+
+    <textarea
+        id="jsonOutput"
+        readonly
+        spellcheck="false"
+    ></textarea>
+
+    <p class="json-help">
+        Copy this JSON and add it to your <code>recipes.json</code> file.
+    </p>
+</div>
 
             </form>
 

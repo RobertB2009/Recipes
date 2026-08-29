@@ -469,7 +469,7 @@ function startCookingMode() {
 
 
         // =========================
-        // INGREDIENTS
+        // INGREDIENTS 
         // =========================
 
         const ingredientsHTML =

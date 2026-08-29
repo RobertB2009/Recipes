@@ -530,3 +530,227 @@ footer {
         font-size: 12px;
     }
 }
+
+/* =========================
+   COOKING MODE
+   ========================= */
+
+.cooking-mode {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: var(--background);
+
+    overflow-y: auto;
+}
+
+
+.cooking-mode-inner {
+
+    min-height: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 40px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+.close-cooking-mode {
+
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+.cooking-progress {
+
+    color: var(--accent);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.cooking-mode-inner h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.cooking-step {
+
+    padding: 40px 30px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.step-number {
+
+    font-size: 14px;
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+
+.cooking-step p {
+
+    font-size: 28px;
+
+    line-height: 1.5;
+
+}
+
+
+.cooking-timer-button {
+
+    width: 100%;
+
+    padding: 18px;
+
+    margin-bottom: 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--accent);
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.cooking-navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+}
+
+
+.cooking-navigation button {
+
+    padding: 15px 25px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.cooking-navigation button:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cooking-mode-inner {
+
+        padding: 70px 18px 25px;
+
+    }
+
+
+    .cooking-mode-inner h1 {
+
+        font-size: 24px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .cooking-step {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .cooking-step p {
+
+        font-size: 22px;
+
+    }
+
+
+    .cooking-navigation button {
+
+        flex: 1;
+
+        padding: 14px 10px;
+
+    }
+
+}

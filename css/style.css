@@ -452,3 +452,81 @@ footer {
     }
 
 }
+
+/* =========================
+   JSON RESULT
+   ========================= */
+
+.json-result {
+    margin-top: 50px;
+    padding: 25px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.json-result[hidden] {
+    display: none;
+}
+
+.json-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.json-header h2 {
+    font-size: 20px;
+}
+
+.json-header .secondary-button {
+    margin-top: 0;
+}
+
+#jsonOutput {
+    width: 100%;
+    min-height: 400px;
+
+    padding: 18px;
+
+    background: #08090d;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.6;
+
+    resize: vertical;
+    outline: none;
+}
+
+.json-help {
+    margin-top: 12px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.json-help code {
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+
+    .json-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #jsonOutput {
+        min-height: 350px;
+        font-size: 12px;
+    }
+}

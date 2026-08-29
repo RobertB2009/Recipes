@@ -48,5 +48,46 @@
         ],
         "favorite": false,
         "notes": "little hard to roll, easy to burn, dont stack raw dough!"
-    }
+    },
+    {
+    "id": "beefy-pasta-rice",
+    "name": "Beefy-Pasta-Rice",
+    "description": "Warm cheap easy meal",
+    "category": "Dinner",
+    "image": "🍲",
+    "prepTime": 2,
+    "cookTime": 30,
+    "servings": 6,
+    "ingredients": [
+        {
+            "amount": 2,
+            "unit": "lb",
+            "name": "Ground Beef"
+        },
+        {
+            "amount": 4,
+            "unit": "cup",
+            "name": "Rice"
+        },
+        {
+            "amount": 0.5,
+            "unit": "Box",
+            "name": "Pasta"
+        },
+        {
+            "amount": 6,
+            "unit": "cup",
+            "name": "Water"
+        }
+    ],
+    "instructions": [
+        "Cook beef fully.",
+        "Add 6 cups water and bring temperature up for boil.",
+        "Add rice mix, add pasta mix.",
+        "Bring to a boil then down to a simmer and cook covered until pasta and rice are fully cooked."
+    ],
+    "tags": [],
+    "favorite": false,
+    "notes": "Smaller pasta like shells and macaroni is better"
+}
 ]

@@ -187,8 +187,49 @@ recipeForm.addEventListener("submit", (event) => {
     // SHOW GENERATED JSON
     // =========================
 
-    console.log(recipe);
+  const jsonResult = document.getElementById("jsonResult");
+const jsonOutput = document.getElementById("jsonOutput");
+const copyJsonButton = document.getElementById("copyJson");
 
-    alert("Recipe generated! Check the console.");
+const formattedJson = JSON.stringify(recipe, null, 4);
+
+jsonOutput.value = formattedJson;
+jsonResult.hidden = false;
+
+jsonResult.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+});
+
+
+// =========================
+// COPY JSON
+// =========================
+
+copyJsonButton.onclick = async () => {
+
+    try {
+
+        await navigator.clipboard.writeText(formattedJson);
+
+        copyJsonButton.textContent = "✓ Copied!";
+
+        setTimeout(() => {
+            copyJsonButton.textContent = "📋 Copy JSON";
+        }, 2000);
+
+    } catch (error) {
+
+        jsonOutput.select();
+
+        document.execCommand("copy");
+
+        copyJsonButton.textContent = "✓ Copied!";
+
+        setTimeout(() => {
+            copyJsonButton.textContent = "📋 Copy JSON";
+        }, 2000);
+    }
+};
 
 });

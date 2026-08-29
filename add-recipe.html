@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Recipe • RecipeVault</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            🍳 RecipeVault
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="add-recipe.html">Add Recipe</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <p class="eyebrow">RECIPEVAULT</p>
+
+            <h1>Add a recipe.</h1>
+
+            <p class="hero-description">
+                Save a recipe so you can easily find it again later.
+            </p>
+        </section>
+
+        <section class="section">
+
+            <form id="recipeForm">
+
+                <div class="form-group">
+                    <label for="recipeName">Recipe Name</label>
+                    <input
+                        type="text"
+                        id="recipeName"
+                        placeholder="Chocolate Chip Cookies"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea
+                        id="description"
+                        placeholder="A short description of the recipe..."
+                    ></textarea>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+
+                        <select id="category" required>
+                            <option value="">Choose a category</option>
+                            <option value="Cookies">Cookies</option>
+                            <option value="Cakes">Cakes</option>
+                            <option value="Bread">Bread</option>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Desserts">Desserts</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servings">Servings</label>
+
+                        <input
+                            type="number"
+                            id="servings"
+                            min="1"
+                            placeholder="24"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="prepTime">Prep Time (minutes)</label>
+
+                        <input
+                            type="number"
+                            id="prepTime"
+                            min="0"
+                            placeholder="15"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cookTime">Cook Time (minutes)</label>
+
+                        <input
+                            type="number"
+                            id="cookTime"
+                            min="0"
+                            placeholder="10"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Ingredients</label>
+
+                    <div id="ingredients">
+                        <div class="ingredient-row">
+                            <input
+                                type="number"
+                                class="ingredient-amount"
+                                placeholder="2"
+                                step="any"
+                            >
+
+                            <input
+                                type="text"
+                                class="ingredient-unit"
+                                placeholder="cups"
+                            >
+
+                            <input
+                                type="text"
+                                class="ingredient-name"
+                                placeholder="flour"
+                            >
+                        </div>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="addIngredient"
+                        class="secondary-button"
+                    >
+                        + Add Ingredient
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <label>Instructions</label>
+
+                    <div id="instructions">
+
+                        <div class="instruction-row">
+                            <span>1</span>
+
+                            <textarea
+                                class="instruction"
+                                placeholder="Preheat the oven..."
+                                required
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="addInstruction"
+                        class="secondary-button"
+                    >
+                        + Add Step
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Personal Notes</label>
+
+                    <textarea
+                        id="notes"
+                        placeholder="Anything you want to remember about this recipe..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Save Recipe
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="js/add-recipe.js"></script>
+
+</body>
+</html>

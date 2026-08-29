@@ -449,24 +449,18 @@ function startCookingMode() {
 
     let currentStep = 0;
 
-    const instructions =
-        recipe.instructions;
+    const instructions = recipe.instructions;
 
-
-    const overlay =
-        document.createElement("div");
+    const overlay = document.createElement("div");
 
     overlay.className = "cooking-mode";
-
 
     document.body.appendChild(overlay);
 
 
     function showStep() {
 
-        const instruction =
-            instructions[currentStep];
-
+        const instruction = instructions[currentStep];
 
         const text =
             typeof instruction === "string"
@@ -474,9 +468,64 @@ function startCookingMode() {
                 : instruction.text;
 
 
+        // =========================
+        // INGREDIENTS
+        // =========================
+
+        const ingredientsHTML =
+            recipe.ingredients.map((ingredient) => {
+
+                return `
+                    <div class="cooking-ingredient">
+
+                        <strong>
+                            ${formatAmount(ingredient.amount)}
+                        </strong>
+
+                        <span>
+                            ${ingredient.unit}
+                        </span>
+
+                        <span>
+                            ${ingredient.name}
+                        </span>
+
+                    </div>
+                `;
+
+            }).join("");
+
+
+        // =========================
+        // NOTES
+        // =========================
+
+        const notesHTML =
+            recipe.notes
+                ? `
+                    <div class="cooking-notes">
+
+                        <h2>📝 Notes</h2>
+
+                        <p>
+                            ${recipe.notes}
+                        </p>
+
+                    </div>
+                `
+                : "";
+
+
+        // =========================
+        // COOKING MODE LAYOUT
+        // =========================
+
         overlay.innerHTML = `
 
             <div class="cooking-mode-inner">
+
+
+                <!-- CLOSE -->
 
                 <button
                     class="close-cooking-mode"
@@ -486,29 +535,58 @@ function startCookingMode() {
                 </button>
 
 
-                <div class="cooking-progress">
-                    STEP ${currentStep + 1}
-                    OF ${instructions.length}
+                <!-- INGREDIENTS -->
+
+                <div class="cooking-ingredients">
+
+                    <h2>🥣 Ingredients</h2>
+
+                    <div class="cooking-ingredient-list">
+
+                        ${ingredientsHTML}
+
+                    </div>
+
                 </div>
 
+
+                <!-- STEP COUNTER -->
+
+                <div class="cooking-progress">
+
+                    STEP ${currentStep + 1}
+                    OF ${instructions.length}
+
+                </div>
+
+
+                <!-- RECIPE NAME -->
 
                 <h1>
                     ${recipe.name}
                 </h1>
 
 
+                <!-- CURRENT STEP -->
+
                 <div class="cooking-step">
 
                     <div class="step-number">
+
                         ${currentStep + 1}
+
                     </div>
 
                     <p>
+
                         ${text}
+
                     </p>
 
                 </div>
 
+
+                <!-- NAVIGATION -->
 
                 <div class="cooking-navigation">
 
@@ -516,7 +594,9 @@ function startCookingMode() {
                         id="previousStep"
                         ${currentStep === 0 ? "disabled" : ""}
                     >
+
                         ← Previous
+
                     </button>
 
 
@@ -524,20 +604,112 @@ function startCookingMode() {
                         currentStep === instructions.length - 1
                             ? `
                                 <button id="finishCooking">
+
                                     ✓ Finish
+
                                 </button>
                             `
                             : `
                                 <button id="nextStep">
+
                                     Next →
+
                                 </button>
                             `
                     }
 
                 </div>
 
+
+                <!-- NOTES -->
+
+                ${notesHTML}
+
+
             </div>
+
         `;
+
+
+        // =========================
+        // CLOSE
+        // =========================
+
+        document
+            .getElementById("closeCookingMode")
+            .addEventListener("click", () => {
+
+                overlay.remove();
+
+            });
+
+
+        // =========================
+        // PREVIOUS
+        // =========================
+
+        const previous =
+            document.getElementById("previousStep");
+
+
+        if (previous) {
+
+            previous.addEventListener("click", () => {
+
+                currentStep--;
+
+                showStep();
+
+            });
+
+        }
+
+
+        // =========================
+        // NEXT
+        // =========================
+
+        const next =
+            document.getElementById("nextStep");
+
+
+        if (next) {
+
+            next.addEventListener("click", () => {
+
+                currentStep++;
+
+                showStep();
+
+            });
+
+        }
+
+
+        // =========================
+        // FINISH
+        // =========================
+
+        const finish =
+            document.getElementById("finishCooking");
+
+
+        if (finish) {
+
+            finish.addEventListener("click", () => {
+
+                overlay.remove();
+
+            });
+
+        }
+
+    }
+
+
+    showStep();
+
+}
 
 
         // =========================

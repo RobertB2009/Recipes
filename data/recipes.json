@@ -89,5 +89,65 @@
     "tags": [],
     "favorite": false,
     "notes": "Smaller pasta like shells and macaroni is better"
+},
+{
+    "id": "french-onion-loaf",
+    "name": "French Onion Loaf",
+    "description": "Simple easy delicious",
+    "category": "Bread",
+    "image": "🥖",
+    "prepTime": 180,
+    "cookTime": 30,
+    "servings": 12,
+    "ingredients": [
+        {
+            "amount": 1.5,
+            "unit": "cup",
+            "name": "Warm Water"
+        },
+        {
+            "amount": 1,
+            "unit": "tsp",
+            "name": "Sugar"
+        },
+        {
+            "amount": 1,
+            "unit": "tsp",
+            "name": "Yeast"
+        },
+        {
+            "amount": 2,
+            "unit": "tbsp",
+            "name": "Oil"
+        },
+        {
+            "amount": 3.33333333333,
+            "unit": "cup",
+            "name": "Flour"
+        },
+        {
+            "amount": 1,
+            "unit": "tsp",
+            "name": "Salt"
+        },
+        {
+            "amount": 1,
+            "unit": "Handful",
+            "name": "Onion slices"
+        }
+    ],
+    "instructions": [
+        "Mix water, sugar, yeast.",
+        "Stir in oil, then mix in flour until sticky dough forms.",
+        "Add salt and do coil folds until dough comes together, cover let rest for 20 minutes.",
+        "One set coil folds let rest 2 hours.",
+        "Preheat oven to 460. Transfer onto floured surface coil fold onions into dough, fold in from sides to seal bottom, shape, rest for 15 minutes",
+        "Bake for 10 minutes, lower temperature to 360 and bake for 15 more minutes or until golden brown."
+    ],
+    "tags": [],
+    "favorite": false,
+    "notes": ""
 }
+
+
 ]

@@ -445,13 +445,16 @@ function setupCookingMode() {
 
 }
 
+
 function startCookingMode() {
 
     let currentStep = 0;
 
-    const instructions = recipe.instructions;
+    const instructions =
+        recipe.instructions;
 
-    const overlay = document.createElement("div");
+    const overlay =
+        document.createElement("div");
 
     overlay.className = "cooking-mode";
 
@@ -460,7 +463,8 @@ function startCookingMode() {
 
     function showStep() {
 
-        const instruction = instructions[currentStep];
+        const instruction =
+            instructions[currentStep];
 
         const text =
             typeof instruction === "string"
@@ -469,7 +473,7 @@ function startCookingMode() {
 
 
         // =========================
-        // INGREDIENTS 
+        // INGREDIENTS
         // =========================
 
         const ingredientsHTML =
@@ -523,7 +527,6 @@ function startCookingMode() {
         overlay.innerHTML = `
 
             <div class="cooking-mode-inner">
-
 
                 <!-- CLOSE -->
 
@@ -594,26 +597,24 @@ function startCookingMode() {
                         id="previousStep"
                         ${currentStep === 0 ? "disabled" : ""}
                     >
-
                         ← Previous
-
                     </button>
 
 
                     ${
                         currentStep === instructions.length - 1
                             ? `
-                                <button id="finishCooking">
-
+                                <button
+                                    id="finishCooking"
+                                >
                                     ✓ Finish
-
                                 </button>
                             `
                             : `
-                                <button id="nextStep">
-
+                                <button
+                                    id="nextStep"
+                                >
                                     Next →
-
                                 </button>
                             `
                     }
@@ -624,7 +625,6 @@ function startCookingMode() {
                 <!-- NOTES -->
 
                 ${notesHTML}
-
 
             </div>
 
@@ -667,87 +667,6 @@ function startCookingMode() {
 
         // =========================
         // NEXT
-        // =========================
-
-        const next =
-            document.getElementById("nextStep");
-
-
-        if (next) {
-
-            next.addEventListener("click", () => {
-
-                currentStep++;
-
-                showStep();
-
-            });
-
-        }
-
-
-        // =========================
-        // FINISH
-        // =========================
-
-        const finish =
-            document.getElementById("finishCooking");
-
-
-        if (finish) {
-
-            finish.addEventListener("click", () => {
-
-                overlay.remove();
-
-            });
-
-        }
-
-    }
-
-
-    showStep();
-
-}
-
-
-        // =========================
-        // CLOSE COOKING MODE
-        // =========================
-
-        document
-            .getElementById("closeCookingMode")
-            .addEventListener("click", () => {
-
-                overlay.remove();
-
-            });
-
-
-        // =========================
-        // PREVIOUS STEP
-        // =========================
-
-        const previous =
-            document.getElementById("previousStep");
-
-
-        if (previous) {
-
-            previous.addEventListener("click", () => {
-
-                currentStep--;
-
-                showStep();
-
-            });
-
-        }
-
-
-        // =========================
-        // NEXT STEP
         // =========================
 
         const next =

@@ -12,13 +12,21 @@ function parseAmount(value) {
         return 0;
     }
 
-    // Normal number: 2, 1.5, etc.
+
+    // =========================
+    // NORMAL NUMBER
+    // =========================
+
     if (!isNaN(value)) {
         return Number(value);
     }
 
-    // Handle fractions like "1/2", "3/4", etc.
-    if (value.includes("/")) {
+
+    // =========================
+    // FRACTION: "1/2"
+    // =========================
+
+    if (value.includes("/") && !value.includes(" ")) {
 
         const parts = value.split("/");
 
@@ -37,26 +45,69 @@ function parseAmount(value) {
         }
     }
 
-    // Unicode fractions
+
+    // =========================
+    // MIXED FRACTION: "1 1/2"
+    // =========================
+
+    if (value.includes(" ")) {
+
+        const parts = value.split(/\s+/);
+
+        if (parts.length === 2 && parts[1].includes("/")) {
+
+            const whole = Number(parts[0]);
+
+            const fractionParts = parts[1].split("/");
+
+            const numerator = Number(fractionParts[0]);
+            const denominator = Number(fractionParts[1]);
+
+            if (
+                !isNaN(whole) &&
+                !isNaN(numerator) &&
+                !isNaN(denominator) &&
+                denominator !== 0
+            ) {
+                return whole + (numerator / denominator);
+            }
+        }
+    }
+
+
+    // =========================
+    // UNICODE FRACTIONS
+    // =========================
+
     const unicodeFractions = {
+
         "½": 0.5,
+
         "⅓": 1 / 3,
         "⅔": 2 / 3,
+
         "¼": 0.25,
         "¾": 0.75,
+
         "⅕": 0.2,
         "⅖": 0.4,
         "⅗": 0.6,
         "⅘": 0.8,
+
         "⅙": 1 / 6,
         "⅚": 5 / 6,
+
         "⅛": 0.125,
         "⅜": 0.375,
         "⅝": 0.625,
         "⅞": 0.875
     };
 
-    // Handle mixed Unicode fractions like "1½"
+
+    // =========================
+    // MIXED UNICODE: "1½"
+    // =========================
+
     for (const fraction in unicodeFractions) {
 
         if (value.includes(fraction)) {
@@ -71,23 +122,6 @@ function parseAmount(value) {
         }
     }
 
-    return 0;
-}
-
-    // Handle something like "1½"
-    for (const fraction in unicodeFractions) {
-
-        if (value.includes(fraction)) {
-
-            const whole =
-                value.replace(fraction, "").trim();
-
-            return (
-                (Number(whole) || 0) +
-                unicodeFractions[fraction]
-            );
-        }
-    }
 
     return 0;
 }

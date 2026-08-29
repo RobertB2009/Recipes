@@ -1,0 +1,105 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RecipeVault</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            🍳 RecipeVault
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="add-recipe.html">Add Recipe</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <p class="eyebrow">RECIPE LIBRARY</p>
+
+            <h1>What are you<br>cooking today?</h1>
+
+            <p class="hero-description">
+                Keep all your favorite recipes in one place.
+            </p>
+
+            <div class="search-box">
+                <span>🔎</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search your recipes..."
+                >
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Categories</h2>
+            </div>
+
+            <div class="categories">
+                <button>🍪 Cookies</button>
+                <button>🍰 Cakes</button>
+                <button>🥖 Bread</button>
+                <button>🥞 Breakfast</button>
+                <button>🥪 Lunch</button>
+                <button>🍝 Dinner</button>
+                <button>🍨 Desserts</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Recently Added</h2>
+                <a href="#">View All →</a>
+            </div>
+
+            <div id="recipeGrid" class="recipe-grid">
+
+                <article class="recipe-card">
+                    <div class="recipe-image">
+                        🍪
+                    </div>
+
+                    <div class="recipe-info">
+                        <span class="recipe-category">Cookies</span>
+
+                        <h3>Chocolate Chip Cookies</h3>
+
+                        <p>
+                            Soft, chewy cookies loaded with chocolate chips.
+                        </p>
+
+                        <div class="recipe-meta">
+                            <span>⏱️ 25 min</span>
+                            <span>🍪 24 servings</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>RecipeVault</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
+```

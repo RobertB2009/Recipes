@@ -153,6 +153,7 @@
     "name": "Cheesy Beefy Broccoli Mac",
     "description": "Cheesy Beefy Broccoli Yummy Easy",
     "category": "Dinner",
+    "image": "🥘",
     "prepTime": 5,
     "cookTime": 30,
     "servings": 8,
@@ -178,14 +179,14 @@
             "name": "Cheddar Cheese"
         },
         {
-            "amount": 5,
+            "amount": 4,
             "unit": "cup",
             "name": "Water"
         }
     ],
     "instructions": [
-        "Cook beef in pot medium to high heat, once beef is cooked add water, macaroni, desired seasonings and bring to boil",
-        "Once most of the water is gone add broccoli and cook until desired softness, remove from heat",
+        "Cook beef in pot medium to high heat, once beef is cooked add water, macaroni, desired seasonings and bring to boil then reduce heat",
+        "Once most of the water is gone add broccoli and cook until desired softness(may need a tiny bit more water), remove from heat",
         "Add and stir in the Cheddar Cheese and cover for 5 minutes"
     ],
     "tags": [],

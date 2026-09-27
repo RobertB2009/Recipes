@@ -192,6 +192,51 @@
     "tags": [],
     "favorite": false,
     "notes": ""
+},
+{
+    "id": "deviled-eggs",
+    "name": "Deviled Eggs",
+    "description": "",
+    "category": "Desserts",
+    "image": "🥚",
+    "prepTime": 5,
+    "cookTime": 30,
+    "servings": 24,
+    "ingredients": [
+        {
+            "amount": 12,
+            "unit": "whole",
+            "name": "Eggs"
+        },
+        {
+            "amount": 1.5,
+            "unit": "tsp",
+            "name": "Mayo"
+        },
+        {
+            "amount": 1.5,
+            "unit": "tsp",
+            "name": "Dijon mustard"
+        },
+        {
+            "amount": 24,
+            "unit": "dash",
+            "name": "Paprika"
+        },
+        {
+            "amount": 2,
+            "unit": "dash",
+            "name": "Salt&pepper"
+        }
+    ],
+    "instructions": [
+        "Hard boil the eggs, fill pot warm water add eggs bring to boil boil 10 minutes put eggs in ice bath 10 minutes",
+        "Peel, slice in half, take yolk out into a bowl",
+        "Mix yolk, mayo, mustard, salt/pepper, and any seasonings such as onion garlic powder, spicy powder etc then add mix into egg whites and dash paprika ontop, let chill then serve"
+    ],
+    "tags": [],
+    "favorite": false,
+    "notes": ""
 }
 
 ]
